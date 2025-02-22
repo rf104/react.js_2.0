@@ -1,6 +1,9 @@
-import { StrictMode, React} from 'react'
+
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
+import React from 'react'
+
+const anotherUser = 'Sajedullah Aref'
 
 
 const reactElement = React.createElement(
@@ -9,9 +12,10 @@ const reactElement = React.createElement(
     href:'https://www.google.com',
     target:'_blank',
   },
-  'Click Me'
+  'Click Me',
+  // anotherUser, the variable will inject here!!
 )
 
 createRoot(document.getElementById('root')).render(
-  reactElement
+    <App/>
 )
