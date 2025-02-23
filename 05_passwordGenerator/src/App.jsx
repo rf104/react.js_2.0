@@ -96,6 +96,10 @@ function App() {
         </div>
 
       </div>
+      <div className='text-xl text-center text-amber-200'>
+        <p>developed by <a className='text-2xl text-blue-400' href="https://sajedullah-aref-104.vercel.app/">Sajedullah Aref</a></p>
+
+      </div>
     </>
   )
 }
