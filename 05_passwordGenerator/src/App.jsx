@@ -13,6 +13,8 @@ function App() {
 
   const passwordClipboard = useCallback(()=>{
       passworCopy.current?.select();
+      //Range the selected text
+      //passworCopy.current?.setSelectionRange(0,9);
       window.navigator.clipboard.writeText(Password)
   },[Password])
 
