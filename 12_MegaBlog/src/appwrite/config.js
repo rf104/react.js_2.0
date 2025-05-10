@@ -34,7 +34,7 @@ export class Services{
         }
     }
 
-    async updatePoost(slug,{title,content,featuredImage,status,userId}){
+    async updatePost(slug,{title,content,featuredImage,status,userId}){
         try {
             
             return await this.databases.updateDocument(
