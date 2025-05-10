@@ -7,6 +7,11 @@ import Button from "./Button";
 import Input from "./Input";
 import RTE from "./RTE";
 import Select from './Select'
+import Signup from './Signup'
+import PostCard from './PostCard'
+import PostForm from './post-form/PostForm'
+import AuthLayout from './AuthLayout'
+import Login from '../component/Login'
 
 
 export { 
@@ -19,5 +24,9 @@ export {
     Input,
     RTE,
     Select,
-    
+    Signup,
+    PostForm,
+    PostCard,
+    AuthLayout,
+    Login,
 };

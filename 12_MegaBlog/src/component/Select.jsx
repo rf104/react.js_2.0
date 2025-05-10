@@ -5,7 +5,7 @@ function Select({
     label,
     className = '',
     ...props
-}) {
+},ref) {
   return (
     <div className='w-full'>
         {label && <label 

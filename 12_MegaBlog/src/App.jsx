@@ -1,4 +1,4 @@
-import React, { use } from 'react'
+import React from 'react'
 import {useDispatch} from 'react-redux'
 import { useState,useEffect } from 'react';
 import authService from './appwrite/auth'
@@ -18,7 +18,7 @@ function App() {
     authService.getCurrentUser()
     .then((userData)=>{
       if(userData){
-        dispatch(login({userData}));
+        dispatch(login({userData}))
       }else{
         dispatch(logout());
       }
