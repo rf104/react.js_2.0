@@ -5,7 +5,8 @@ import { Container, PostCard } from '../component';
 
 function Home() {
 
-    const [posts, setPosts] = useState(null);
+    const [posts, setPosts] = useState([])
+
 
     useEffect(()=>{
        appwriteService.getPosts().then((post)=>{
@@ -30,6 +31,7 @@ function Home() {
             </>
         )
     }
+
     return (
         <div className='py0=-8 w-full '>
             <Container>

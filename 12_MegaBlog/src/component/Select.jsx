@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useId } from 'react'
 
 function Select({
     options,
@@ -6,7 +6,9 @@ function Select({
     className = '',
     ...props
 },ref) {
-  return (
+    const id = useId();
+  
+    return (
     <div className='w-full'>
         {label && <label 
             className = 'inline-block mb-1 pl-1'

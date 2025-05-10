@@ -1,5 +1,5 @@
-import React,{use, useCallback} from 'react'
-import { set, useForm } from 'react-hook-form'
+import React,{useEffect, useCallback} from 'react'
+import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import appwriteService from '../../appwrite/config'
@@ -18,7 +18,7 @@ function PostForm({post}) {
     })
 
     const navigate = useNavigate();
-    const userData = useSelector((state) => state.user.userData);
+    const userData = useSelector((state) => state.auth.userData);
 
     const submit = async (data) => {
         if(post){
@@ -62,7 +62,7 @@ function PostForm({post}) {
             // setValue('slug', slug)
             // return slug;
 
-            return value.trim().toLocaleLowerCase().replace(/^[a-zA-Z\d\s]+/g,'-').replace(/\s/g,'-')
+            return value.trim().toLocaleLowerCase().replace(/[^a-zA-Z\d\s]+/g,'-').replace(/\s/g,'-')
           }
           return ''
   },[])
@@ -78,7 +78,7 @@ function PostForm({post}) {
     return ()=>{
       subscription.unsubscribe()
     }
-  },[slug, slugTransform, setValue])
+  },[watch, slugTransform, setValue])
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
             <div className="w-2/3 px-2">
